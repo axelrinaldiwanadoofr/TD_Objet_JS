@@ -17,11 +17,11 @@ function AfficheUnArticle( unArticle )
 // Appel de la fonction avec l'article référencé par monArticle
 AfficheUnArticle( monArticle ) ;
 
-AfficheUnArticle( {
-    article: "banane",
-    quantite: 9
-} ) ;
+// Qu'est ce que font ces deux lignes ?
 
+let f = AfficheUnArticle ;
+
+f( monArticle ) ;
 
 
 
