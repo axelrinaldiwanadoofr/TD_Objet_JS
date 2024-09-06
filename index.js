@@ -24,10 +24,24 @@ let f = AfficheUnArticle ;
 f( monArticle ) ;
 
 
-let panier = [] ; // Cree un tableau vide
+// Cree un panier avec des fruits
 
+let panier = [
+    { article: "tomate", quantite: 15},
+    { article: "banane", quantite: 9 },
+    { article: "pommes", qte: 5}
+];
 
+function AffichePanier( unPanier )
+{
+    for(let i = 0; i < unPanier.length; i++){
+        f(unPanier[i]);
+    }
+}
 
+console.log( "Le panier de la menagere" ) ;
+
+AffichePanier( panier ) ;
 
 
 
