@@ -42,6 +42,16 @@ lesEtudiants.push( {
     section: "BTS SIO2"
 } ) ;
 
+for(let i =1; i<=11; i++){
+    let clone =  {
+        nom: "Lux",
+        prenom: "Mateo",
+        civilite: "Monsieur",
+        age: 21 + i,
+        section: "BTS SIO"
+    };
+    lesEtudiants.push(clone)
+}
 console.log( lesEtudiants ) ;
 
 
