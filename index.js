@@ -13,9 +13,10 @@ console.log(civilite + " " + nom + " " + prenom);
 let etudiant = {} ;
 etudiant.nom = "DELON" ;
 etudiant.prenom = "Alain" ;
+etudiant.civilite = "Monsieur" ;
+etudiant.age = 85 ;
+etudiant.section = "cinéma" ;
 
 console.log( etudiant ) ;
 
-etudiant.nom = "DUPOND" ;
 
-console.log( etudiant ) ;
