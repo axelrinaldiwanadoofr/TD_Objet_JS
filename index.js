@@ -10,6 +10,12 @@ console.log(civilite + " " + nom + " " + prenom);
 
 // Création d'un objet vide
 
-let etudiant = new Object() ;
+let etudiant = {} ;
+etudiant.nom = "DELON" ;
+etudiant.prenom = "Alain" ;
+
+console.log( etudiant ) ;
+
+etudiant.nom = "DUPOND" ;
 
 console.log( etudiant ) ;
