@@ -1,58 +1,24 @@
-// Stoker les informations d'un étudiant
-let nom = "DELON" ;
-let prenom = "Alain" ;
-let civilite = "Monsieur" ;
-let age = 85 ;
-let section = "cinéma" ;
+// On crée l'article tomate au nombre de 15
 
-// Affiche les informations de l'étudiant
-console.log(civilite + " " + nom + " " + prenom);
-
-// Création d'un objet JSON
-
-let etudiant = {
-    nom: "DELON",
-    prenom: "Alain",
-    civilite: "Monsieur",
-    age: 85,
-    section: "cinéma"
+let monArticle = {
+    article: "tomate",
+    quantite: 15
 } ;
 
-// Création d'un tableau vide pour y contenir des étudiants
-
-let lesEtudiants = new Array() ;
-
-// Insertion de Alain Delon dans le tableau
-lesEtudiants[0] = etudiant ;
-
-// Insertion d'un autre étudiant avec du JSON
-lesEtudiants[1] = {
-    nom: "DUPOND",
-    prenom: "Aline",
-    civilite: "Madame",
-    age: 25,
-    section: "BTS MCO"
-} ;
-
-lesEtudiants.push( {
-    nom: "LUX",
-    prenom: "Mathéo",
-    civilite: "Monsieur",
-    age: 21,
-    section: "BTS SIO2"
-} ) ;
-
-for(let i =1; i<=11; i++){
-    let clone =  {
-        nom: "Lux",
-        prenom: "Mateo",
-        civilite: "Monsieur",
-        age: 21 + i,
-        section: "BTS SIO"
-    };
-    lesEtudiants.push(clone)
+// Fonction qui affiche les données d'un article
+function AfficheUnArticle( unArticle )
+{
+    console.log( "Nom de l'article: " + unArticle.article ) ;
+    console.log( "Quantite: " + unArticle.quantite ) ;
 }
-console.log( lesEtudiants ) ;
+
+// Appel de la fonction avec l'article référencé par monArticle
+AfficheUnArticle( monArticle ) ;
+
+
+
+
+
 
 
 
