@@ -5,10 +5,7 @@ let monArticle = {
     quantite: 15
 } ;
 
-let monArticle2 = {
-    article: "banane",
-    quantite: 9
-} ;
+
 
 // Fonction qui affiche les données d'un article
 function AfficheUnArticle( unArticle )
@@ -19,7 +16,11 @@ function AfficheUnArticle( unArticle )
 
 // Appel de la fonction avec l'article référencé par monArticle
 AfficheUnArticle( monArticle ) ;
-AfficheUnArticle( monArticle2 ) ;
+
+AfficheUnArticle( {
+    article: "banane",
+    quantite: 9
+} ) ;
 
 
 
