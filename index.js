@@ -18,23 +18,31 @@ let etudiant = {
     section: "cinéma"
 } ;
 
-console.log( etudiant ) ;
+// Création d'un tableau vide pour y contenir des étudiants
 
-let etudiant1 ;
+let lesEtudiants = new Array() ;
 
-etudiant1 = etudiant ; // Copie de la référence de l'objet
+// Insertion de Alain Delon dans le tableau
+lesEtudiants[0] = etudiant ;
 
-console.log( etudiant1 ) ;
+// Insertion d'un autre étudiant avec du JSON
+lesEtudiants[1] = {
+    nom: "DUPOND",
+    prenom: "Aline",
+    civilite: "Madame",
+    age: 25,
+    section: "BTS MCO"
+} ;
 
-etudiant1.age = 50 ;
+lesEtudiants.push( {
+    nom: "LUX",
+    prenom: "Mathéo",
+    civilite: "Monsieur",
+    age: 21,
+    section: "BTS SIO2"
+} ) ;
 
-console.log( "etudiant1: " ) ;
-console.log( etudiant1 ) ;
-
-console.log( "etudiant: " ) ;
-console.log( etudiant ) ;
-
-// Les 2 variables pointent vers le même objet
+console.log( lesEtudiants ) ;
 
 
 
