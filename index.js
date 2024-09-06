@@ -24,6 +24,9 @@ let f = AfficheUnArticle ;
 f( monArticle ) ;
 
 
+let panier = [] ; // Cree un tableau vide
+
+
 
 
 
