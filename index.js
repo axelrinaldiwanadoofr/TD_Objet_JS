@@ -7,3 +7,9 @@ let section = "cinéma" ;
 
 // Affiche les informations de l'étudiant
 console.log(civilite + " " + nom + " " + prenom);
+
+// Création d'un objet vide
+
+let etudiant = new Object() ;
+
+console.log( etudiant ) ;
