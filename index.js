@@ -39,7 +39,7 @@ function AffichePanier( unPanier )
     }
 }
 
-console.log( "Le panier de la menagere" ) ;
+console.log( "Le panier de la menagere..." ) ;
 
 AffichePanier( panier ) ;
 
