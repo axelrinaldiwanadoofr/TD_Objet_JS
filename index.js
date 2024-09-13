@@ -1,58 +1,61 @@
-// Stoker les informations d'un étudiant
-let nom = "DELON" ;
-let prenom = "Alain" ;
-let civilite = "Monsieur" ;
-let age = 85 ;
-let section = "cinéma" ;
+// On crée l'article tomate au nombre de 15
 
-// Affiche les informations de l'étudiant
-console.log(civilite + " " + nom + " " + prenom);
-
-// Création d'un objet JSON
-
-let etudiant = {
-    nom: "DELON",
-    prenom: "Alain",
-    civilite: "Monsieur",
-    age: 85,
-    section: "cinéma"
+let monArticle = {
+    article: "tomate",
+    quantite: 15
 } ;
 
-// Création d'un tableau vide pour y contenir des étudiants
 
-let lesEtudiants = new Array() ;
 
-// Insertion de Alain Delon dans le tableau
-lesEtudiants[0] = etudiant ;
-
-// Insertion d'un autre étudiant avec du JSON
-lesEtudiants[1] = {
-    nom: "DUPOND",
-    prenom: "Aline",
-    civilite: "Madame",
-    age: 25,
-    section: "BTS MCO"
-} ;
-
-lesEtudiants.push( {
-    nom: "LUX",
-    prenom: "Mathéo",
-    civilite: "Monsieur",
-    age: 21,
-    section: "BTS SIO2"
-} ) ;
-
-for(let i =1; i<=11; i++){
-    let clone =  {
-        nom: "Lux",
-        prenom: "Mateo",
-        civilite: "Monsieur",
-        age: 21 + i,
-        section: "BTS SIO"
-    };
-    lesEtudiants.push(clone)
+// Fonction qui affiche les données d'un article
+function AfficheUnArticle( unArticle )
+{
+    console.log( "Nom de l'article: " + unArticle.article ) ;
+    console.log( "Quantite: " + unArticle.quantite ) ;
 }
-console.log( lesEtudiants ) ;
+
+// Appel de la fonction avec l'article référencé par monArticle
+AfficheUnArticle( monArticle ) ;
+
+// Autre version de fonction qui affiche les données d'un article
+function AfficheUnArticleEnLigne( unArticle )
+{
+    console.log( "Nom: " + unArticle.article + " Quantite: " + unArticle.quantite ) ;
+}
+
+// Qu'est ce que font ces deux lignes ?
+
+let f = AfficheUnArticle ;
+
+f( monArticle ) ;
+
+
+// Cree un panier avec des fruits
+
+let panier = [
+    { article: "tomate", quantite: 15},
+    { article: "banane", quantite: 9 },
+    { article: "pommes", quantite: 5}
+];
+
+/*
+Affiche chaque article du panier référencé par unPanier avec
+la fonction référencé par fct
+*/
+function AffichePanier( unPanier, fct )
+{
+    for(let i = 0; i < unPanier.length; i++){
+        fct( unPanier[i] );
+    }
+}
+
+console.log( "Le panier de la menagere..." ) ;
+
+AffichePanier( panier, AfficheUnArticle ) ;
+
+AffichePanier( panier, AfficheUnArticleEnLigne ) ;
+
+
 
 
 
