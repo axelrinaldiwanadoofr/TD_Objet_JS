@@ -35,8 +35,17 @@ f( monArticle ) ;
 let panier = [
     { article: "tomate", quantite: 15},
     { article: "banane", quantite: 9 },
-    { article: "pommes", quantite: 5}
+    { article: "pomme", quantite: 5}
 ];
+
+
+function AfficheUnArticleV2(UnArticle){
+    if(UnArticle.quantite > 1){
+        console.log("Il y a "+UnArticle.quantite+ " " + UnArticle.article +"s dans le panier ");
+    }else{
+        console.log("Il y a "+UnArticle.quantite+ " " + UnArticle.article +" dans le panier ");
+    }
+}
 
 /*
 Affiche chaque article du panier référencé par unPanier avec
@@ -55,6 +64,7 @@ AffichePanier( panier, AfficheUnArticle ) ;
 
 AffichePanier( panier, AfficheUnArticleEnLigne ) ;
 
+AffichePanier( panier, AfficheUnArticleV2 ) ;
 
 
 
