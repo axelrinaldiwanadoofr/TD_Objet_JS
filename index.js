@@ -5,47 +5,42 @@ let monArticle = {
     quantite: 15
 } ;
 
+// Ajout de la méthode affiche() qui le contenu de l'article
 
-
-// Fonction qui affiche les données d'un article
-function AfficheUnArticle( unArticle )
+monArticle.affiche = function()
 {
-    console.log( "Nom de l'article: " + unArticle.article ) ;
-    console.log( "Quantite: " + unArticle.quantite ) ;
+    console.log( this.article + " " + this.quantite ) ;
 }
 
-// Appel de la fonction avec l'article référencé par monArticle
-AfficheUnArticle( monArticle ) ;
+// Appel de la méthode affiche() pour l'objet référencé par monArticle
 
-// Autre version de fonction qui affiche les données d'un article
-function AfficheUnArticleEnLigne( unArticle )
-{
-    console.log( "Nom: " + unArticle.article + " Quantite: " + unArticle.quantite ) ;
-}
+monArticle.affiche() ;
 
-// Qu'est ce que font ces deux lignes ?
+let a = monArticle ;
 
-let f = AfficheUnArticle ;
+a.affiche() ;
 
-f( monArticle ) ;
+//let b = {
+//    article: "carotte",
+//    quantite: 3,
+//    affiche: a.affiche
+//} ;
 
+//b.affiche = a.affiche ;
 
-// Cree un panier avec des fruits
-
-let panier = [
-    { article: "tomate", quantite: 15},
-    { article: "banane", quantite: 9 },
-    { article: "pomme", quantite: 5}
-];
-
-
-function AfficheUnArticleV2(UnArticle){
-    if(UnArticle.quantite > 1){
-        console.log("Il y a "+UnArticle.quantite+ " " + UnArticle.article +"s dans le panier ");
-    }else{
-        console.log("Il y a "+UnArticle.quantite+ " " + UnArticle.article +" dans le panier ");
+let b = {
+    article: "carotte",
+    quantite: 3,
+    affiche: function ()
+    {
+        console.log( this.article + " " + this.quantite + " c'est très bon" ) ;
     }
-}
+} ;
+
+b.affiche() ;
+
+
+
 
 /*
 Affiche chaque article du panier référencé par unPanier avec
@@ -59,23 +54,6 @@ function AffichePanier( unPanier, fct )
 }
 
 console.log( "Le panier de la menagere..." ) ;
-
-AffichePanier( panier, AfficheUnArticle ) ;
-
-AffichePanier( panier, AfficheUnArticleEnLigne ) ;
-
-AffichePanier( panier, AfficheUnArticleV2 ) ;
-
-AffichePanier( panier, function (article) {
-    if(article.quantite > 1){
-        console.log("Il y a "+article.quantite+ " " + article.article +"s dans le panier ");
-    }else{
-        console.log("Il y a "+article.quantite+ " " + article.article +" dans le panier ");
-    }
-} ) ;
-
-
-
 
 
 
