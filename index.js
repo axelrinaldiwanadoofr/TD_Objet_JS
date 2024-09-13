@@ -66,6 +66,14 @@ AffichePanier( panier, AfficheUnArticleEnLigne ) ;
 
 AffichePanier( panier, AfficheUnArticleV2 ) ;
 
+AffichePanier( panier, function (article) {
+    if(article.quantite > 1){
+        console.log("Il y a "+article.quantite+ " " + article.article +"s dans le panier ");
+    }else{
+        console.log("Il y a "+article.quantite+ " " + article.article +" dans le panier ");
+    }
+} ) ;
+
 
 
 
