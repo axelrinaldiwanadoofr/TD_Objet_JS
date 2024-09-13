@@ -29,7 +29,7 @@ f( monArticle ) ;
 let panier = [
     { article: "tomate", quantite: 15},
     { article: "banane", quantite: 9 },
-    { article: "pommes", qte: 5}
+    { article: "pommes", quantite: 5}
 ];
 
 function AffichePanier( unPanier )
