@@ -37,7 +37,23 @@ let b = {
     }
 } ;
 
+// Redéfinition de la méthode toString 
+b.toString = function()
+{
+    return this.article + " " + this.quantite ;
+}
+
+
 b.affiche() ;
+
+console.log( "Voici le nouvel article: b " + b.toString() ) ;
+console.log( "Voici le nouvel article: b " + b ) ;
+console.log( "Voici le nouvel article: a " + a ) ;
+
+let s = "J'aime bien manger " + b + ". Car elles sont très bonnes" ;
+
+console.log( s ) ;
+
 
 
 
