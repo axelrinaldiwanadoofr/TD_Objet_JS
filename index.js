@@ -17,6 +17,12 @@ function AfficheUnArticle( unArticle )
 // Appel de la fonction avec l'article référencé par monArticle
 AfficheUnArticle( monArticle ) ;
 
+// Autre version de fonction qui affiche les données d'un article
+function AfficheUnArticleEnLigne( unArticle )
+{
+    console.log( "Nom: " + unArticle.article + " Quantite: " + unArticle.quantite ) ;
+}
+
 // Qu'est ce que font ces deux lignes ?
 
 let f = AfficheUnArticle ;
@@ -32,17 +38,22 @@ let panier = [
     { article: "pommes", quantite: 5}
 ];
 
-function AffichePanier( unPanier )
+/*
+Affiche chaque article du panier référencé par unPanier avec
+la fonction référencé par fct
+*/
+function AffichePanier( unPanier, fct )
 {
     for(let i = 0; i < unPanier.length; i++){
-        f(unPanier[i]);
+        fct( unPanier[i] );
     }
 }
 
 console.log( "Le panier de la menagere..." ) ;
 
-AffichePanier( panier ) ;
+AffichePanier( panier, AfficheUnArticle ) ;
 
+AffichePanier( panier, AfficheUnArticleEnLigne ) ;
 
 
 
