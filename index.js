@@ -19,3 +19,19 @@ function chercheValeur(tableau, nomCase){
 }
 
 console.log( t.nom + " " + t.prenom + " " + t.age ) ;
+
+let objet = {
+    nom: "COULON",
+    prenom: "Ethan",
+    age: 19 
+} ;
+
+console.log( objet.nom + " " + objet.prenom + " " + objet.age ) ;
+console.log( objet["nom"] + " " + objet["prenom"] + " " + objet["age"] ) ;
+
+let objet1 = new Object() ;
+objet1.nom = "TEKBAS" ;
+objet1.prenom = "Kenan" ;
+objet1.age = 19 ;
+
+console.log( objet1["nom"] + " " + objet1["prenom"] + " " + objet1["age"] ) ;
