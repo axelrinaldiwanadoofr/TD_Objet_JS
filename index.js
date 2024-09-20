@@ -36,7 +36,11 @@ objet1.age = 19 ;
 
 console.log( objet1["nom"] + " " + objet1["prenom"] + " " + objet1["age"] ) ;
 
+objet.ville = "Colmar" ;
+objet["pays"] = "France" ;
+
 for( let key in objet )
 {
     console.log( key + ": " + objet[key] ) ;
 }
+
