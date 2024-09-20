@@ -7,6 +7,8 @@ t["age"] = 18 ;
 
 console.log( t["prenom"] ) ;
 
+t.ville = "Selestat" ;
+
 for( let key in t )
 {
     console.log( key + ": " + t[key] ) ;
