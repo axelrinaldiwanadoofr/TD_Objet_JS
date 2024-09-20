@@ -46,3 +46,15 @@ for( let key in objet )
     console.log( key + ": " + objet[key] ) ;
 }
 
+function AfficheObjet(){
+    for( let key in objet)
+    {
+        alert(key + ": " + objet[key]);
+    }
+}
+
+// Lucas continue la fonction
+function AjouteAttribut()
+{
+    DocumentByGetE
+}
