@@ -13,16 +13,12 @@ for( let key in t )
 }
 
 function chercheValeur(tableau, nomCase){
-    for(var key in tableau){
-        if(key == nomCase){
-            return tableau[key]
-        }
-    }  
-    return ("La case " + nomCase + " n'existe pas dans le tableau.")  
+    if( tableau[nomCase] === undefined )
+        return ("La case " + nomCase + " n'existe pas dans le tableau.") ;      
+    return tableau[nomCase] ;
 }
 
-console.log( "ville: " + ( t["ville"] === undefined ) ) ;
-console.log( "prenom: " + ( t["prenom"] === undefined ) ) ;
 
-console.log(chercheValeur(t, "ville"))
+console.log( "ville: " + chercheValeur(t, "ville")) ;
+console.log( "prenom: " + chercheValeur(t, "prenom")) ;
 
