@@ -21,4 +21,8 @@ function chercheValeur(tableau, nomCase){
     return ("La case " + nomCase + " n'existe pas dans le tableau.")  
 }
 
+console.log( "ville: " + ( t["ville"] === undefined ) ) ;
+console.log( "prenom: " + ( t["prenom"] === undefined ) ) ;
+
 console.log(chercheValeur(t, "ville"))
+
