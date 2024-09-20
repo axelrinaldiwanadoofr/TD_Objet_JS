@@ -35,3 +35,8 @@ objet1.prenom = "Kenan" ;
 objet1.age = 19 ;
 
 console.log( objet1["nom"] + " " + objet1["prenom"] + " " + objet1["age"] ) ;
+
+for( let key in objet )
+{
+    console.log( key + ": " + objet[key] ) ;
+}
