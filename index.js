@@ -18,7 +18,4 @@ function chercheValeur(tableau, nomCase){
     return tableau[nomCase] ;
 }
 
-
-console.log( "ville: " + chercheValeur(t, "ville")) ;
-console.log( "prenom: " + chercheValeur(t, "prenom")) ;
-
+console.log( t.nom + " " + t.prenom + " " + t.age ) ;
