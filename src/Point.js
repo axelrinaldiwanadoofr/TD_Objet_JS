@@ -12,9 +12,23 @@ class Point extends Figure
         this.y = y ;
     }
 
+    placer( x , y )
+    {
+        this.x = x ;
+        this.y = y ;
+    }
+
     dessiner( feuille )
     {
-        console.log( "dessine un point de coordonnees \
-         " + this.x + ", " + this.y ) ;
+        // On cree un objet IMG du DOM
+        this.objetHTML = document.createElement( "IMG" ) ;
+
+        // On positionne les propriétés de l'objet
+        this.objetHTML.src = "images/point.png" ;
+        this.objetHTML.style.position = "absolute" ;
+        this.objetHTML.style.left = this.x + "px" ;
+        this.objetHTML.style.top = this.y + "px" ;
+
+        feuille.appendChild( this.objetHTML ) ;
     }
 }
