@@ -8,3 +8,6 @@ f.dessiner( feuille ) ;
 
 let p = new Point( 50, 30 ) ;
 p.dessiner( feuille ) ;
+
+var e = new Etoile();
+e.dessiner(feuille);
