@@ -1,13 +1,25 @@
 let feuille = document.getElementById( "main" ) ;
 
+let dessin = [] ;
 
-let f = new Figure() ;
+dessin.push( new Figure() ) ;
+dessin.push( new Point( 50, 30 ) ) ;
+dessin.push( new Etoile() ) ;
 
-f.placer( 10, 20 ) ;
-f.dessiner( feuille ) ;
+class Schtroumf extends Figure
+{
+    constructor()
+    {
+        super() ;
+    }
+}
 
-let p = new Point( 50, 30 ) ;
-p.dessiner( feuille ) ;
+dessin.push( new Schtroumf() ) ;
 
-var e = new Etoile();
-e.dessiner(feuille);
+function DessineDessin( d )
+{
+    for( let i=0 ; i<d.length ; i++ ) d[i].dessiner( feuille ) ;
+}
+
+DessineDessin( dessin ) ;
+
