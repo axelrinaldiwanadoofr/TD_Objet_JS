@@ -43,6 +43,9 @@ catch( error )
     console.error( error ) ;
 }
 
+let form = new FormMeuble() ;
+form.updateForm( m1 ) ;
+
 console.log( "La hauteur du meuble est " + m1.getHauteur() ) ;
 console.log( Meuble.hauteurMin ) ;
 
