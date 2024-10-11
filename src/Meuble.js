@@ -4,7 +4,7 @@ class Meuble
     constructor( largeur=40, hauteur=50, profondeur=20)
     {
         this.largeur = largeur ;
-        this.hauteur = hauteur ;
+        this._hauteur = hauteur ;
         this.profondeur = profondeur ;
     }
 
@@ -18,14 +18,24 @@ class Meuble
 
     setHauteur( valeur )
     {
-        if( valeur >= Meuble.hauteurMin && valeur <= Meuble.hauteurMax ) this.hauteur = valeur ;
+        if( valeur >= Meuble.hauteurMin && valeur <= Meuble.hauteurMax ) this._hauteur = valeur ;
         else throw "La hauteur ne peut etre " + valeur + " et doit etre comprise entre 50 et 180" ;
         //else console.error( "La hauteur ne peut etre " + valeur + " et doit etre comprise entre 50 et 180" ) ;
     }
 
     getHauteur()
     {
-        return this.hauteur ;
+        return this._hauteur ;
+    }
+
+    get hauteur()
+    {
+       return this._hauteur ;
+    }
+
+    set hauteur( valeur )
+    {
+        this.setHauteur( valeur ) ;
     }
 
     setProfondeur( valeur )
