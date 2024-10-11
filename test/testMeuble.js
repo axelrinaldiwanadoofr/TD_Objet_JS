@@ -35,6 +35,8 @@ let m1 = new Meuble( 80, 100, 50 ) ;
 try
 {
     m1.hauteur = 200 ;
+    m1.largeur = 100 ;
+    m1.profondeur = 45 ;
 } 
 catch( error )
 {

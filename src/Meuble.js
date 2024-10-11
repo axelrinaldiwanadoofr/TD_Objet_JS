@@ -3,24 +3,44 @@ class Meuble
 {
     constructor( largeur=40, hauteur=50, profondeur=20)
     {
-        this.largeur = largeur ;
+        this._largeur = largeur ;
         this._hauteur = hauteur ;
-        this.profondeur = profondeur ;
+        this._profondeur = profondeur ;
     }
 
     static hauteurMin = 50 ;
     static hauteurMax = 180 ;
+    static largeurMin = 40 ;
+    static largeurMax = 200 ;
+    static profondeurMin = 20 ;
+    static profondeurMax = 60 ;
 
     setLargeur( valeur )
     {
-        if( valeur >= 40 && valeur <= 200 ) this.largeur = valeur ;
+        if( valeur >= Meuble.largeurMin && valeur <= Meuble.largeurMax ) 
+            this._largeur = valeur ;
+        else throw "La largeur ne peut etre " + valeur + 
+            " et doit etre comprise entre " + Meuble.largeurMin + 
+            " et " + Meuble.largeurMax ;
     }
+    get largeur()
+    {
+       return this._largeur ;
+    }
+
+    set largeur( valeur )
+    {
+        this.setLargeur( valeur ) ;
+    }
+
 
     setHauteur( valeur )
     {
-        if( valeur >= Meuble.hauteurMin && valeur <= Meuble.hauteurMax ) this._hauteur = valeur ;
-        else throw "La hauteur ne peut etre " + valeur + " et doit etre comprise entre 50 et 180" ;
-        //else console.error( "La hauteur ne peut etre " + valeur + " et doit etre comprise entre 50 et 180" ) ;
+        if( valeur >= Meuble.hauteurMin && valeur <= Meuble.hauteurMax )
+            this._hauteur = valeur ;
+        else throw "La hauteur ne peut etre " + valeur + 
+            " et doit etre comprise entre " + Meuble.hauteurMin + 
+            " et " + Meuble.hauteurMax ;
     }
 
     getHauteur()
@@ -40,6 +60,21 @@ class Meuble
 
     setProfondeur( valeur )
     {
-        if( valeur >= 20 && valeur <= 60 ) this.profondeur = valeur ;
+        if( valeur >= Meuble.profondeurMin && valeur <= Meuble.profondeurMax ) 
+            this._profondeur = valeur ;
+        else throw "La profondeur ne peut etre " + valeur + 
+            " et doit etre comprise entre " + Meuble.profondeurMin + 
+            " et " + Meuble.profondeurMax ;
     }
+
+    get profondeur()
+    {
+       return this._profondeur ;
+    }
+
+    set profondeur( valeur )
+    {
+        this.setProfondeur( valeur ) ;
+    }
+
 }
