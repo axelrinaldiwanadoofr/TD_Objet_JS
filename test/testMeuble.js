@@ -41,7 +41,7 @@ catch( error )
     console.error( error ) ;
 }
 
-console.log( m1 ) ;
+console.log( "La hauteur du meuble est " + m1.getHauteur() ) ;
 
 if( m1.largeur < 40 || m1.largeur > 200 )
 {

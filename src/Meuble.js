@@ -20,6 +20,11 @@ class Meuble
         //else console.error( "La hauteur ne peut etre " + valeur + " et doit etre comprise entre 50 et 180" ) ;
     }
 
+    getHauteur()
+    {
+        return this.hauteur ;
+    }
+
     setProfondeur( valeur )
     {
         if( valeur >= 20 && valeur <= 60 ) this.profondeur = valeur ;
