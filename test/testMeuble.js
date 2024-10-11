@@ -46,6 +46,17 @@ catch( error )
 let form = new FormMeuble() ;
 form.updateForm( m1 ) ;
 
+for( let membre in m1 )
+{
+    console.log( membre + " : " + m1[membre] ) ;
+    let propriete = membre.substring( 1 ) ;
+    m1[propriete] = m1[propriete] + 1 ;
+    console.log( propriete + " : " + m1[propriete] ) ;
+}
+
+
+console.log("largeur: " + m1["largeur"]) ;
+
 console.log( "La hauteur du meuble est " + m1.getHauteur() ) ;
 console.log( Meuble.hauteurMin ) ;
 
