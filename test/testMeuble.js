@@ -49,6 +49,9 @@ form1.updateVue( m1 ) ;
 let form2 = new FormMeuble( "FormulaireMeuble2" ) ;
 form2.updateVue( m1 ) ;
 
+let dessinMeuble1 = new DessinMeuble( "m1" ) ;
+dessinMeuble1.updateVue( m1 ) ;
+
 for( let membre in m1 )
 {
     console.log( membre + " : " + m1[membre] ) ;
