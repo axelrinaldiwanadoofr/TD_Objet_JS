@@ -1,10 +1,9 @@
 
-class Formulaire
+class Formulaire extends Vue
 {
     constructor( id )
     {
-        this.id = id ;
-        this.modele = null ;
+        super( id ) ;
 
         // Cree les écouteurs de click sur les boutons OK et Cancel
         let div = document.getElementById( this.id ) ;
@@ -15,17 +14,6 @@ class Formulaire
         {
             this.onOk() ;
         }) ;
-
-        // Cree un écouteur pour l'évenement ModeleChanged
-        document.body.addEventListener( "ModeleChanged", (event)=>
-        {
-            if( event.detail.modele == this.modele )
-            {
-                this.onModeleChanged( event.detail.propriete,
-                    event.detail.oldValue,
-                    event.detail.newValue ) ;
-            }
-        });
     }
 
     onOk()
@@ -33,17 +21,10 @@ class Formulaire
         this.updateModele() ;
     }
 
-    onModeleChanged( propriete, oldValue, newValue )
+    updateVue( modele=null )
     {
-        this.updateForm() ;
-    }
-
-    updateForm( modele=null )
-    {
-        if( modele ) // <=> a if( modele != null )
-        {
-            this.modele = modele ;
-        }
+        // Appel de la méthode updateVue de la classe mère Vue
+        super.updateVue( modele ) ;
 
         if( this.modele )
         {
@@ -63,10 +44,8 @@ class Formulaire
 
     updateModele( modele=null )
     {
-        if( modele ) // <=> a if( modele != null )
-        {
-            this.modele = modele ;
-        }
+        // Appel de la méthode updateModele de la classe mère Vue
+        super.updateModele( modele ) ;
 
         if( this.modele )
         {
@@ -92,10 +71,5 @@ class Formulaire
                 }
             }
         }
-    }
-
-    onError( error )
-    {
-        alert( "Attention: " + error ) ;
     }
 }

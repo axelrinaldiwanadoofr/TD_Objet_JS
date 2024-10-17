@@ -44,10 +44,10 @@ catch( error )
 }
 
 let form1 = new FormMeuble( "FormulaireMeuble1" ) ;
-form1.updateForm( m1 ) ;
+form1.updateVue( m1 ) ;
 
 let form2 = new FormMeuble( "FormulaireMeuble2" ) ;
-form2.updateForm( m1 ) ;
+form2.updateVue( m1 ) ;
 
 for( let membre in m1 )
 {
