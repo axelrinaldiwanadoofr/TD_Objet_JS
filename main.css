@@ -1,0 +1,17 @@
+
+.Dessin 
+{
+    position: sticky ;
+    width: 600px ;
+    height: 600px ;
+}
+
+.Meuble
+{
+    position: absolute ;
+    left: 50px ;
+    top: 50px ;
+    width: 60px ;
+    height: 60px ;
+    background-color: chocolate;
+}
