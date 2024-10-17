@@ -15,11 +15,27 @@ class Formulaire
         {
             this.onOk() ;
         }) ;
+
+        // Cree un écouteur pour l'évenement ModeleChanged
+        document.body.addEventListener( "ModeleChanged", (event)=>
+        {
+            if( event.detail.modele == this.modele )
+            {
+                this.onModeleChanged( event.detail.propriete,
+                    event.detail.oldValue,
+                    event.detail.newValue ) ;
+            }
+        });
     }
 
     onOk()
     {
         this.updateModele() ;
+    }
+
+    onModeleChanged( propriete, oldValue, newValue )
+    {
+        this.updateForm() ;
     }
 
     updateForm( modele=null )

@@ -18,7 +18,26 @@ class Meuble
     setLargeur( valeur )
     {
         if( valeur >= Meuble.largeurMin && valeur <= Meuble.largeurMax ) 
-            this._largeur = valeur ;
+        {
+            if( valeur != this._largeur )
+            {
+                let myEvent = new CustomEvent("ModeleChanged", {
+                    detail: {
+                        modele: this,
+                        propriete: "largeur",
+                        oldValue: this._largeur,
+                        newValue: valeur
+                    },
+                    bubbles: true,
+                    cancelable: true,
+                    composed: false,
+                  });
+
+                this._largeur = valeur ;
+
+                document.body.dispatchEvent( myEvent ) ;
+            }
+        }
         else throw "La largeur ne peut etre " + valeur + 
             " et doit etre comprise entre " + Meuble.largeurMin + 
             " et " + Meuble.largeurMax ;

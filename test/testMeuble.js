@@ -84,3 +84,8 @@ if( m1.profondeur < 20 || m1.profondeur > 60 )
 
 if( ok ) console.log( "Test passé avec succès" ) ;
 else console.error( "Test non passé") ;
+
+setInterval( function()
+{
+    m1.largeur++ ;
+}, 1000 ) ;
