@@ -4,20 +4,75 @@ class FormMeuble
     constructor( id )
     {
         this.id = id ;
+        this.modele = null ;
+
+        // Cree les écouteurs de click sur les boutons OK et Cancel
+        let div = document.getElementById( this.id ) ;
+        // On recupère les boutons OK
+        let buttonsOk = div.getElementsByClassName( "BtnOk" ) ;
+        // On cree un EventListener sur le premier bouton OK
+        buttonsOk[0].addEventListener( "click", (event)=>
+        {
+            this.onOk() ;
+        }) ;
     }
 
-    updateForm( meuble )
+    onOk()
     {
-        let div = document.getElementById( this.id ) ;
-        let inputs = div.getElementsByClassName( "Input") ;
+        this.updateModele() ;
 
-        for( let i=0 ; i<inputs.length ; i++)
+        alert( "largeur: " + this.modele.largeur + 
+        "\nhauteur: " + this.modele.hauteur + 
+        "\nprofondeur: " + this.modele.profondeur ) ;
+    }
+
+    updateForm( modele=null )
+    {
+        if( modele ) // <=> a if( modele != null )
         {
-            let input = inputs[i] ;
-            if( meuble[input.name] != undefined )
-                input.value = meuble[input.name] ;
-            else
-                input.value = "" ;
+            this.modele = modele ;
+        }
+
+        if( this.modele )
+        {
+            let div = document.getElementById( this.id ) ;
+            let inputs = div.getElementsByClassName( "Input") ;
+
+            for( let i=0 ; i<inputs.length ; i++)
+            {
+                let input = inputs[i] ;
+                if( this.modele[input.name] != undefined )
+                    input.value = this.modele[input.name] ;
+                else
+                    input.value = "" ;
+            }
         }
     }
+
+    updateModele( modele=null )
+    {
+        if( modele ) // <=> a if( modele != null )
+        {
+            this.modele = modele ;
+        }
+
+        if( this.modele )
+        {
+            let div = document.getElementById( this.id ) ;
+            let inputs = div.getElementsByClassName( "Input") ;
+
+            for( let i=0 ; i<inputs.length ; i++)
+            {
+                let input = inputs[i] ;
+                if( this.modele[input.name] != undefined )
+                {
+                    if( input.type == "number" )
+                        this.modele[input.name] = parseInt( input.value ) ;
+                    else
+                        this.modele[input.name] = input.value ;
+                }
+            }
+        }
+    }
+
 }
