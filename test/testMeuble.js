@@ -87,5 +87,5 @@ else console.error( "Test non passé") ;
 
 setInterval( function()
 {
-    m1.largeur++ ;
+//    m1.largeur++ ;
 }, 1000 ) ;

@@ -1,8 +1,9 @@
 
-class Meuble
+class Meuble extends Modele
 {
     constructor( largeur=40, hauteur=50, profondeur=20)
     {
+        super() ;
         this._largeur = largeur ;
         this._hauteur = hauteur ;
         this._profondeur = profondeur ;
@@ -19,24 +20,7 @@ class Meuble
     {
         if( valeur >= Meuble.largeurMin && valeur <= Meuble.largeurMax ) 
         {
-            if( valeur != this._largeur )
-            {
-                let myEvent = new CustomEvent("ModeleChanged", {
-                    detail: {
-                        modele: this,
-                        propriete: "largeur",
-                        oldValue: this._largeur,
-                        newValue: valeur
-                    },
-                    bubbles: true,
-                    cancelable: true,
-                    composed: false,
-                  });
-
-                this._largeur = valeur ;
-
-                document.body.dispatchEvent( myEvent ) ;
-            }
+            this.setProperty( "largeur", valeur ) ;
         }
         else throw "La largeur ne peut etre " + valeur + 
             " et doit etre comprise entre " + Meuble.largeurMin + 
@@ -56,7 +40,7 @@ class Meuble
     setHauteur( valeur )
     {
         if( valeur >= Meuble.hauteurMin && valeur <= Meuble.hauteurMax )
-            this._hauteur = valeur ;
+            this.setProperty( "hauteur", valeur ) ;
         else throw "La hauteur ne peut etre " + valeur + 
             " et doit etre comprise entre " + Meuble.hauteurMin + 
             " et " + Meuble.hauteurMax ;
@@ -80,7 +64,7 @@ class Meuble
     setProfondeur( valeur )
     {
         if( valeur >= Meuble.profondeurMin && valeur <= Meuble.profondeurMax ) 
-            this._profondeur = valeur ;
+            this.setProperty( "profondeur", valeur ) ;
         else throw "La profondeur ne peut etre " + valeur + 
             " et doit etre comprise entre " + Meuble.profondeurMin + 
             " et " + Meuble.profondeurMax ;
