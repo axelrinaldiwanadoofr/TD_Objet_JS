@@ -43,7 +43,7 @@ catch( error )
     console.error( error ) ;
 }
 
-let form = new FormMeuble() ;
+let form = new FormMeuble( "FormulaireMeuble" ) ;
 form.updateForm( m1 ) ;
 
 for( let membre in m1 )

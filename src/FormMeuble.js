@@ -1,23 +1,23 @@
 
 class FormMeuble
 {
-    constructor()
-    {}
+    constructor( id )
+    {
+        this.id = id ;
+    }
 
     updateForm( meuble )
     {
-        for( let membre in meuble )
-        {
-            let propriete = membre.substring( 1 ) ;
-            document.getElementById( propriete ).value = meuble[propriete] ;
-         }
-        
-        /*
-        let inputLargeur = document.getElementById( "largeur" ) ;
-        inputLargeur.value = meuble.largeur ;
+        let div = document.getElementById( this.id ) ;
+        let inputs = div.getElementsByClassName( "Input") ;
 
-        document.getElementById( "hauteur" ).value = meuble.hauteur ;
-        document.getElementById( "profondeur" ).value = meuble.profondeur ;
-        */
+        for( let i=0 ; i<inputs.length ; i++)
+        {
+            let input = inputs[i] ;
+            if( meuble[input.name] != undefined )
+                input.value = meuble[input.name] ;
+            else
+                input.value = "" ;
+        }
     }
 }
