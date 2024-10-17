@@ -43,8 +43,11 @@ catch( error )
     console.error( error ) ;
 }
 
-let form = new FormMeuble( "FormulaireMeuble" ) ;
-form.updateForm( m1 ) ;
+let form1 = new FormMeuble( "FormulaireMeuble1" ) ;
+form1.updateForm( m1 ) ;
+
+let form2 = new FormMeuble( "FormulaireMeuble2" ) ;
+form2.updateForm( m1 ) ;
 
 for( let membre in m1 )
 {
