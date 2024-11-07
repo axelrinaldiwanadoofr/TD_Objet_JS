@@ -24,6 +24,7 @@ class Bougeur extends HTMLElement
     {
         super() ;
         this.img = null ;
+        this.seDeplace = false ;
     }
 
     connectedCallback()
@@ -36,6 +37,35 @@ class Bougeur extends HTMLElement
         this.appendChild( img ) ;
 
         this.img = img ;
+
+        img.addEventListener( "mousedown", (event)=>
+        {
+            this.onMouseDown( event ) ;
+        }) ;
+        img.addEventListener( "mousemove", (event)=>
+        {
+            this.onMouseMove( event ) ;
+        }) ;
+    }
+
+    onMouseDown( event )
+    {
+        this.seDeplace = !this.seDeplace ;
+        let x = event.clientX ;
+        let y = event.clientY ;
+        this.img.style.left = x - 12 + "px" ;
+        this.img.style.top = y - 12 + "px" ;
+    }
+
+    onMouseMove( event )
+    {
+        if( this.seDeplace )
+        {
+            let x = event.clientX ;
+            let y = event.clientY ;
+            this.img.style.left = x - 12 + "px" ;
+            this.img.style.top = y - 12 + "px" ;
+        }
     }
 }
 
