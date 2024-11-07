@@ -8,7 +8,9 @@ class MonWC extends HTMLElement
 
     connectedCallback()
     {
-        this.innerHTML = "<span>Mon Web Component</span><br>" ;
+        let t = document.getElementById( "MonWC" ) ;
+        let clone = document.importNode( t.content, true ) ;
+        this.appendChild( clone ) ;
     }
 
 }
