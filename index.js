@@ -11,6 +11,16 @@ class MonWC extends HTMLElement
         let t = document.getElementById( "MonWC" ) ;
         let clone = document.importNode( t.content, true ) ;
         this.appendChild( clone ) ;
+
+        this.addEventListener( "mousedown", (event)=>
+        {
+            this.onClick( event ) ;
+        })
+    }
+
+    onClick( event )
+    {
+        this.innerHTML += "<bougeur-vh>" ;
     }
 
 }
@@ -50,6 +60,7 @@ class Bougeur extends HTMLElement
 
     onMouseDown( event )
     {
+        event.stopPropagation() ;
         this.seDeplace = !this.seDeplace ;
         let x = event.clientX ;
         let y = event.clientY ;
