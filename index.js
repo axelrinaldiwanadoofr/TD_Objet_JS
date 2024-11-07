@@ -8,7 +8,7 @@ class MonWC extends HTMLElement
 
     connectedCallback()
     {
-        console.log( "Creation d'un element de type MonWC" ) ;
+        this.innerHTML = "<span>Mon Web Component</span><br>" ;
     }
 
 }
