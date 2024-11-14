@@ -9,5 +9,6 @@ class FormMeuble extends Formulaire
     onError( error )
     {
         alert( "Attention pour un meuble " + error ) ;
+        this.updateVue() ;
     }
 }
