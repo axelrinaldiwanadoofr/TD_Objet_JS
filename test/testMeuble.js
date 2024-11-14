@@ -30,7 +30,7 @@ Scénario création d'un meuble avec les valeurs
 définies par l'utilisateur
 ==============================================*/
 
-let m1 = new Meuble( 80, 100, 50, "ME02" ) ;
+let m1 = new Meuble( 80, 100, 50 ) ;
 
 try
 {

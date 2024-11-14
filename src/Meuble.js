@@ -1,15 +1,18 @@
 
 class Meuble extends Modele
 {
-    constructor( largeur=40, hauteur=50, profondeur=20, reference="ME0" )
+    constructor( largeur=40, hauteur=50, profondeur=20 )
     {
         super() ;
         this._largeur = largeur ;
         this._hauteur = hauteur ;
         this._profondeur = profondeur ;
-        this._reference = reference ;
+        this._reference = "ME" + Meuble.compteurDeReference ;
+
+        Meuble.compteurDeReference++ ;
     }
 
+    static compteurDeReference = 0 ;
     static hauteurMin = 50 ;
     static hauteurMax = 180 ;
     static largeurMin = 40 ;
