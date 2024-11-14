@@ -52,5 +52,6 @@ class DessinMeuble extends Vue
 
         div.style.width = this.modele.largeur + "px" ;
         div.style.height = this.modele.hauteur + "px" ;
+        div.style.backgroundColor = this.modele.couleur ;
     }
 }

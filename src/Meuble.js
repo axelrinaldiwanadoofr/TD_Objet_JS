@@ -1,13 +1,14 @@
 
 class Meuble extends Modele
 {
-    constructor( largeur=40, hauteur=50, profondeur=20 )
+    constructor( largeur=40, hauteur=50, profondeur=20, couleur="#0000FF" )
     {
         super() ;
         this._largeur = largeur ;
         this._hauteur = hauteur ;
         this._profondeur = profondeur ;
         this._reference = "ME" + Meuble.compteurDeReference ;
+        this._couleur = couleur ;
 
         Meuble.compteurDeReference++ ;
     }
@@ -97,4 +98,15 @@ class Meuble extends Modele
         }
         else throw "La reference doit commencer par ME" ;
     }
+
+    get couleur()
+    {
+       return this._couleur ;
+    }
+
+    set couleur( valeur )
+    {
+        this.setProperty( "couleur", valeur ) ;
+    }
+
 }
