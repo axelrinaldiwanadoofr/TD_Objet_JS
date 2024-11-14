@@ -1,12 +1,13 @@
 
 class Meuble extends Modele
 {
-    constructor( largeur=40, hauteur=50, profondeur=20)
+    constructor( largeur=40, hauteur=50, profondeur=20, reference="ME0" )
     {
         super() ;
         this._largeur = largeur ;
         this._hauteur = hauteur ;
         this._profondeur = profondeur ;
+        this._reference = reference ;
     }
 
     static hauteurMin = 50 ;
@@ -80,4 +81,17 @@ class Meuble extends Modele
         this.setProfondeur( valeur ) ;
     }
 
+    get reference()
+    {
+       return this._reference ;
+    }
+
+    set reference( valeur )
+    {
+        if( valeur[0] == "M" && valeur[1] == "E" )
+        {
+            this.setProperty( "reference", valeur ) ;
+        }
+        else throw "La reference doit commencer par ME" ;
+    }
 }

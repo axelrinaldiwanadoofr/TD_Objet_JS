@@ -30,7 +30,7 @@ Scénario création d'un meuble avec les valeurs
 définies par l'utilisateur
 ==============================================*/
 
-let m1 = new Meuble( 80, 100, 50 ) ;
+let m1 = new Meuble( 80, 100, 50, "ME02" ) ;
 
 try
 {
@@ -52,6 +52,7 @@ form2.updateVue( m1 ) ;
 let dessinMeuble1 = new DessinMeuble( "m1" ) ;
 dessinMeuble1.updateVue( m1 ) ;
 
+/*
 for( let membre in m1 )
 {
     console.log( membre + " : " + m1[membre] ) ;
@@ -59,7 +60,7 @@ for( let membre in m1 )
     m1[propriete] = m1[propriete] + 1 ;
     console.log( propriete + " : " + m1[propriete] ) ;
 }
-
+*/
 
 console.log("largeur: " + m1["largeur"]) ;
 
